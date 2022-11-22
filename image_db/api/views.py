@@ -97,6 +97,7 @@ class ImageView(viewsets.ModelViewSet):
 
     queryset = Image.objects.all()
     serializer_class = ImageSerializer
+    permission_classes = [permissions.IsAuthenticated]
     pagination_class = pagination.PageNumberPagination
 
     def get_image(self):
@@ -151,3 +152,34 @@ class ImageView(viewsets.ModelViewSet):
                     "Message": "image deleted"
                 }
             )
+
+
+class ListOrDeleteImage(generics.GenericAPIView):
+    """
+    Administrator can delete all images from the database
+    """
+    queryset = Image.objects.all()
+    serializer_class = ImageSerializer
+    permission_classes = [IsAdminUser]
+
+    def delete(self, request):
+        queryset = self.get_queryset()
+        queryset.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class UserCurrentViewSet(viewsets.ModelViewSet):
+    """
+    Return current user
+    """
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+    def get_object(self):
+        pk = self.kwargs.get('pk')
+
+        if pk == 'current':
+            return self.request.user
+
+        return super().get_object()
+
