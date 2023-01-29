@@ -13,7 +13,6 @@ from rest_framework.decorators import action
 from django.core.mail import send_mail
 
 from .models import User, Image
-
 from .selializers import (
     RegisterSerializer,
     TokenSerializer,
