@@ -5,7 +5,6 @@ class IsAdminUser(permissions.BasePermission):
     """
     Restriction of rights. Actions are available only to the admin or django admin.
     """
-
     message = 'Не хватает прав, нужны права Администратора'
 
     def has_permission(self, request, view):
