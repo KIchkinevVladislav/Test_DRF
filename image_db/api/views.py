@@ -23,6 +23,7 @@ from .selializers import (
 from .permissions import IsAdminUser
 
 
+
 class RegisterView(generics.CreateAPIView):
     """
     A cconfirmation_code is sent to the mail received from the user
@@ -181,4 +182,3 @@ class UserCurrentViewSet(viewsets.ModelViewSet):
             return self.request.user
 
         return super().get_object()
-
