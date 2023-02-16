@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-
 class User(AbstractUser):
     """
     User Model
@@ -44,5 +43,3 @@ class Image(models.Model):
         related_name='images'
     )
     image = models.FileField()
-
-    
