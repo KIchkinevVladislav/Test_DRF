@@ -47,7 +47,6 @@ class RegisterView(generics.CreateAPIView):
             )
         return Response(serializer.data)
 
-
 class TokenView(APIView):
     """
     Sending the generated token to the user
