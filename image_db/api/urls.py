@@ -19,7 +19,6 @@ router.register(r'users', UserViewSet, basename='users')
 image_router = routers.NestedSimpleRouter(router, r'users', lookup='users')
 image_router.register(r'images', ImageView, basename='images')
 
-
 urlpatterns = [
     path('v1/images_delete/', ListOrDeleteImage.as_view(), name='images_delete'),
     path('v1/', include(router.urls)),
