@@ -8,7 +8,6 @@ from django.shortcuts import get_object_or_404
 
 from .models import User, Image
 
-
 def get_tokens_for_user(user):
     """
     Creating a token for the user manually.
