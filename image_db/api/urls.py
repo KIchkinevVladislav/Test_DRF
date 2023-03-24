@@ -3,7 +3,6 @@ from rest_framework_simplejwt.views import TokenRefreshView
 
 from rest_framework.routers import DefaultRouter
 from rest_framework_nested import routers
-
 from .views import (
     RegisterView,
     TokenView,
