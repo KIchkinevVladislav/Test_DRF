@@ -43,3 +43,4 @@ class Image(models.Model):
         related_name='images'
     )
     image = models.FileField()
+
