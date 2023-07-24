@@ -71,7 +71,7 @@ class TokenSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     """
-    Serializer for User model.
+    Serializer for User model
     """
     class Meta:
         fields = ('email', 'username', 'role', 'first_name', 'last_name',)
