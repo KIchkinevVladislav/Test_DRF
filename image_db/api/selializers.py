@@ -1,7 +1,6 @@
 import random
 from rest_framework import serializers
-from rest_framework.exceptions import (
-    ValidationError,)
+from rest_framework.exceptions import ValidationError
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.shortcuts import get_object_or_404
 
