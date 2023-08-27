@@ -5,7 +5,7 @@ from rest_framework import (
     generics,
     permissions,
     pagination,
-    status
+    status,
 )
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -17,7 +17,7 @@ from .selializers import (
     RegisterSerializer,
     TokenSerializer,
     UserSerializer,
-    ImageSerializer
+    ImageSerializer,
 )
 
 from .permissions import IsAdminUser
